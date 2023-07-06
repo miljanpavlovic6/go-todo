@@ -21,7 +21,7 @@ func main() {
 		fmt.Fprint(w, "Ok")
 	}
 
-	http.HandleFunc("/api", instana.TracingHandlerFunc(c.LegacySensor(), "/api", handler))
+	http.HandleFunc("/", instana.TracingHandlerFunc(c.LegacySensor(), "/", handler))
 	//
 	app := fiber.New()
 	app.Use(cors.New())
