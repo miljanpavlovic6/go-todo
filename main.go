@@ -13,6 +13,8 @@ import (
 
 func main() {
 
+	instana.InitSensor(instana.DefaultOptions())
+
 	c := instana.InitCollector(&instana.Options{
 		Service: "my-go-app",
 	})
